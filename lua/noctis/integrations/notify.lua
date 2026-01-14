@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("NotifyERRORBorder", { fg = c.invalid })
   highlight("NotifyWARNBorder", { fg = c.constant })
   highlight("NotifyINFOBorder", { fg = c.misc })

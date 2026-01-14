@@ -1,5 +1,5 @@
 -- Noctis Theme Integrations
--- 
+--
 -- This directory contains integration modules for various Neovim plugins.
 -- Each plugin that Noctis supports has its own module file here.
 --

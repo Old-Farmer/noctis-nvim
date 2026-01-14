@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("NvimTreeNormal", { fg = c.fg, bg = c.bg_alt })
   highlight("NvimTreeFolderName", { fg = c.func })
   highlight("NvimTreeFolderIcon", { fg = c.misc })

@@ -8,7 +8,7 @@ Noctis features a well-balanced blend of warm and cold colors that are carefully
 
 ### Light Themes
 - **noctis-lux** - Clean light theme
-- **noctis-hibernus** - Soft light theme  
+- **noctis-hibernus** - Soft light theme
 - **noctis-lilac** - Purple-tinted light theme
 
 ### Dark Themes

@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("WhichKey", { fg = c.keyword })
   highlight("WhichKeyGroup", { fg = c.func })
   highlight("WhichKeyDesc", { fg = c.fg })

@@ -19,10 +19,10 @@ CONTENTS                                                     *noctis-contents*
 ==============================================================================
 INTRODUCTION                                             *noctis-introduction*
 
-Noctis for Neovim is a collection of balanced light & dark themes ported 
+Noctis for Neovim is a collection of balanced light & dark themes ported
 from the Noctis VSCode theme.
 
-Noctis features a well-balanced blend of warm and cold colors that are 
+Noctis features a well-balanced blend of warm and cold colors that are
 carefully designed to be easy on the eyes.
 
 Features:
@@ -70,7 +70,7 @@ Configure and load theme in init.lua: >lua
         notify = true,
       }
     })
-    
+
     -- Load the theme
     vim.cmd([[colorscheme noctis]])
 <
@@ -97,7 +97,7 @@ noctis.setup({config})
               Options: "noctis", "lux", "hibernus", "lilac", "minimus",
                        "azureus", "bordo", "obscuro", "sereno", "uva", "viola"
               Default: "noctis"
-            
+
             • integrations (table): Enable/disable plugin integrations
               All integrations are enabled by default (true)
               Available integrations:

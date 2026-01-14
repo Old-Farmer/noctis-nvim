@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("AlphaHeader", { fg = c.keyword })
   highlight("AlphaButtons", { fg = c.func })
   highlight("AlphaShortcut", { fg = c.misc })

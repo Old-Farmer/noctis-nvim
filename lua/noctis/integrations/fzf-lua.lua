@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("FzfLuaBorder", { fg = c.border, bg = c.bg_alt })
   highlight("FzfLuaNormal", { fg = c.fg, bg = c.bg_alt })
   highlight("FzfLuaHeader", { fg = c.func, bg = c.bg_alt, style = "bold" })

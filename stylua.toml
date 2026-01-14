@@ -1,0 +1,13 @@
+-- Stylua configuration for Noctis
+indent_type = "Spaces"
+indent_width = 2
+line_endings = "Unix"
+max_line_length = 100
+quote_style = "AutoSingle"
+call_parentheses = "Input"
+collapse_simple_statement = "ConservativeAlways"
+
+-- Include Lua files
+[include]
+"lua/**/*.lua" = true
+"colors/**/*.lua" = true

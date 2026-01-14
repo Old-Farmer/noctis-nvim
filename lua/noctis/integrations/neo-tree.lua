@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("NeoTreeNormal", { fg = c.fg, bg = c.bg_alt })
   highlight("NeoTreeNormalNC", { fg = c.fg, bg = c.bg_alt })
   highlight("NeoTreeDirectoryName", { fg = c.func })

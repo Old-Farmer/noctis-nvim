@@ -6,7 +6,7 @@ local M = {}
 function M.apply_highlights(colors)
   local c = colors
   local highlight = require("noctis.theme").highlight
-  
+
   highlight("LualineNormal", { fg = c.fg, bg = c.bg_alt })
   highlight("LualineInsert", { fg = c.bg, bg = c.string })
   highlight("LualineVisual", { fg = c.bg, bg = c.keyword })
