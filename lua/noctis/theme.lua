@@ -218,6 +218,7 @@ function M.load(theme_name)
   M.highlight("@lsp.type.method", { fg = c.func })
   M.highlight("@lsp.type.macro", { fg = c.annotation })
   M.highlight("@lsp.type.decorator", { fg = c.annotation })
+  M.highlight("@lsp.typemod.variable.readonly", { fg = c.constant })
 
   -- LSP diagnostics
   M.highlight("DiagnosticError", { fg = c.invalid })
