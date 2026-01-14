@@ -1,0 +1,177 @@
+*noctis.txt*  A collection of balanced light & dark themes for Neovim
+
+Author:   Noctis contributors
+License:  MIT
+Homepage: https://github.com/noctis-nvim/noctis-nvim
+
+==============================================================================
+CONTENTS                                                     *noctis-contents*
+
+1. Introduction ............................ |noctis-introduction|
+2. Installation ............................ |noctis-installation|
+3. Usage ................................... |noctis-usage|
+4. Configuration ........................... |noctis-configuration|
+5. Themes .................................. |noctis-themes|
+6. Integrations ............................ |noctis-integrations|
+7. Credits ................................. |noctis-credits|
+8. License ................................. |noctis-license|
+
+==============================================================================
+INTRODUCTION                                             *noctis-introduction*
+
+Noctis for Neovim is a collection of balanced light & dark themes ported 
+from the Noctis VSCode theme.
+
+Noctis features a well-balanced blend of warm and cold colors that are 
+carefully designed to be easy on the eyes.
+
+Features:
+  • Full Treesitter support
+  • LSP semantic highlighting
+  • Popular plugin integrations (Telescope, fzf-lua, etc.)
+  • Multiple light and dark variants
+
+==============================================================================
+INSTALLATION                                             *noctis-installation*
+
+Using lazy.nvim: >lua
+    {
+      "Old-Farmer/noctis-nvim",
+      lazy = false,
+      priority = 1000,
+    }
+<
+
+Using vim-plug: >vim
+    Plug 'Old-Farmer/noctis-nvim'
+<
+
+Using vim.pack: >lua
+    vim.pack.add("https://github.com/Old-Farmer/noctis-nvim")
+<
+
+==============================================================================
+USAGE                                                           *noctis-usage*
+
+Configure and load theme in init.lua: >lua
+    require("noctis").setup({
+      theme = "noctis",
+      integrations = {
+        -- All integrations are enabled by default
+        telescope = true,
+        ["fzf-lua"] = true,
+        ["nvim-tree"] = true,
+        ["neo-tree"] = true,
+        gitsigns = true,
+        ["indent-blankline"] = true,
+        ["which-key"] = true,
+        lualine = true,
+        alpha = true,
+        notify = true,
+      }
+    })
+    
+    -- Load the theme
+    vim.cmd([[colorscheme noctis]])
+<
+
+Or simply use colorscheme command: >lua
+    vim.cmd([[colorscheme noctis]])
+<
+
+In init.vim: >vim
+    colorscheme noctis
+<
+
+==============================================================================
+CONFIGURATION                                           *noctis-configuration*
+
+                                                              *noctis.setup()*
+noctis.setup({config})
+    Configure noctis colorscheme options. Does not automatically load the
+    theme - use |:colorscheme| command to load the theme.
+
+    Parameters: ~
+        {config} (table|nil) Configuration options:
+            • theme (string): Default theme name
+              Options: "noctis", "lux", "hibernus", "lilac", "minimus",
+                       "azureus", "bordo", "obscuro", "sereno", "uva", "viola"
+              Default: "noctis"
+            
+            • integrations (table): Enable/disable plugin integrations
+              All integrations are enabled by default (true)
+              Available integrations:
+                - telescope (boolean): Telescope.nvim
+                - fzf-lua (boolean): fzf-lua
+                - nvim-tree (boolean): nvim-tree
+                - neo-tree (boolean): neo-tree
+                - gitsigns (boolean): gitsigns.nvim
+                - indent-blankline (boolean): indent-blankline.nvim
+                - which-key (boolean): which-key.nvim
+                - lualine (boolean): lualine.nvim
+                - alpha (boolean): alpha-nvim
+                - notify (boolean): nvim-notify
+
+    Example: >lua
+        require("noctis").setup({
+          theme = "noctis",
+          integrations = {
+            telescope = true,
+            ["neo-tree"] = false,  -- Disable specific integration
+          }
+        })
+        vim.cmd([[colorscheme noctis]])
+<
+
+==============================================================================
+THEMES                                                         *noctis-themes*
+
+Light Themes~
+  *noctis-lux*         Clean light theme
+  *noctis-hibernus*    Soft light theme
+  *noctis-lilac*       Purple-tinted light theme
+
+Dark Themes~
+  *noctis*             Classic dark theme (default)
+  *noctis-azureus*     Blue-tinted dark theme
+  *noctis-bordo*       Burgundy-tinted dark theme
+  *noctis-obscuro*     Deep dark theme
+  *noctis-sereno*      Calm dark theme
+  *noctis-uva*         Purple-tinted dark theme
+  *noctis-viola*       Violet-tinted dark theme
+  *noctis-minimus*     Minimalist dark theme
+
+==============================================================================
+INTEGRATIONS                                             *noctis-integrations*
+
+Noctis provides enhanced highlighting for popular Neovim plugins:
+
+  • Telescope.nvim       - Fuzzy finder UI
+  • fzf-lua              - Fuzzy finder with fzf integration
+  • nvim-tree            - File explorer tree
+  • neo-tree             - Modern file explorer
+  • gitsigns.nvim        - Git decorations
+  • indent-blankline     - Indentation guides
+  • which-key.nvim       - Key binding helper
+  • lualine.nvim         - Statusline
+  • alpha-nvim           - Start screen
+  • nvim-notify          - Notification manager
+
+All integrations are enabled by default. You can selectively disable them
+in the setup configuration. See |noctis.setup()|.
+
+==============================================================================
+CREDITS                                                       *noctis-credits*
+
+Original theme by Liviu Schera for Visual Studio Code:
+https://github.com/liviuschera/noctis
+
+Ported to Neovim with love by the Noctis contributors.
+
+==============================================================================
+LICENSE                                                       *noctis-license*
+
+MIT License
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:

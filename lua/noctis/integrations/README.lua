@@ -1,0 +1,22 @@
+-- Noctis Theme Integrations
+-- 
+-- This directory contains integration modules for various Neovim plugins.
+-- Each plugin that Noctis supports has its own module file here.
+--
+-- All integrations are automatically applied when you load a Noctis theme.
+-- Highlight groups are defined in theme.lua
+--
+-- Optional manual setup:
+--   require("noctis.integrations.fzf-lua").setup("noctis")
+--
+-- Supported integrations:
+--   - telescope.lua       : Telescope
+--   - fzf-lua.lua         : fzf-lua (with automatic color configuration)
+--   - nvim-tree.lua       : NvimTree
+--   - neo-tree.lua        : Neo-tree
+--   - gitsigns.lua        : GitSigns
+--   - indent-blankline.lua: Indent Blankline
+--   - which-key.lua       : Which-key
+--   - lualine.lua         : Lualine
+--   - alpha.lua           : Alpha (Dashboard)
+--   - notify.lua          : Notify

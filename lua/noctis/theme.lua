@@ -39,6 +39,41 @@ function M.load(theme_name)
   vim.g.colors_name = "noctis-" .. theme_name
 
   local c = palette
+  
+  -- Load integrations based on config
+  local config = require("noctis").config
+  local integrations = config.integrations
+  
+  if integrations.telescope then
+    require("noctis.integrations.telescope").apply_highlights(c)
+  end
+  if integrations["fzf-lua"] then
+    require("noctis.integrations.fzf-lua").apply_highlights(c)
+  end
+  if integrations["nvim-tree"] then
+    require("noctis.integrations.nvim-tree").apply_highlights(c)
+  end
+  if integrations["neo-tree"] then
+    require("noctis.integrations.neo-tree").apply_highlights(c)
+  end
+  if integrations.gitsigns then
+    require("noctis.integrations.gitsigns").apply_highlights(c)
+  end
+  if integrations["indent-blankline"] then
+    require("noctis.integrations.indent-blankline").apply_highlights(c)
+  end
+  if integrations["which-key"] then
+    require("noctis.integrations.which-key").apply_highlights(c)
+  end
+  if integrations.lualine then
+    require("noctis.integrations.lualine").apply_highlights(c)
+  end
+  if integrations.alpha then
+    require("noctis.integrations.alpha").apply_highlights(c)
+  end
+  if integrations.notify then
+    require("noctis.integrations.notify").apply_highlights(c)
+  end
 
   -- Editor highlights
   M.highlight("Normal", { fg = c.fg, bg = c.bg })
@@ -79,11 +114,6 @@ function M.load(theme_name)
   M.highlight("DiffChange", { fg = c.misc, bg = c.bg_highlight })
   M.highlight("DiffDelete", { fg = c.invalid, bg = c.bg_highlight })
   M.highlight("DiffText", { fg = c.keyword, bg = c.bg_highlight, style = "bold" })
-  
-  -- Git signs
-  M.highlight("GitSignsAdd", { fg = c.string })
-  M.highlight("GitSignsChange", { fg = c.misc })
-  M.highlight("GitSignsDelete", { fg = c.invalid })
   
   -- Syntax highlighting
   M.highlight("Comment", { fg = c.comment, style = "italic" })
@@ -221,72 +251,6 @@ function M.load(theme_name)
   M.highlight("DiagnosticUnderlineWarn", { sp = c.constant, style = "underline" })
   M.highlight("DiagnosticUnderlineInfo", { sp = c.misc, style = "underline" })
   M.highlight("DiagnosticUnderlineHint", { sp = c.string, style = "underline" })
-  
-  -- Telescope
-  M.highlight("TelescopeBorder", { fg = c.border, bg = c.bg_alt })
-  M.highlight("TelescopeNormal", { fg = c.fg, bg = c.bg_alt })
-  M.highlight("TelescopeSelection", { fg = c.fg, bg = c.bg_highlight })
-  M.highlight("TelescopeMatching", { fg = c.keyword })
-  M.highlight("TelescopePromptPrefix", { fg = c.func })
-  
-  -- NvimTree
-  M.highlight("NvimTreeNormal", { fg = c.fg, bg = c.bg_alt })
-  M.highlight("NvimTreeFolderName", { fg = c.func })
-  M.highlight("NvimTreeFolderIcon", { fg = c.misc })
-  M.highlight("NvimTreeOpenedFolderName", { fg = c.func, style = "bold" })
-  M.highlight("NvimTreeRootFolder", { fg = c.keyword, style = "bold" })
-  M.highlight("NvimTreeSpecialFile", { fg = c.keyword })
-  M.highlight("NvimTreeGitDirty", { fg = c.constant })
-  M.highlight("NvimTreeGitNew", { fg = c.string })
-  M.highlight("NvimTreeGitDeleted", { fg = c.invalid })
-  
-  -- Neo-tree
-  M.highlight("NeoTreeNormal", { fg = c.fg, bg = c.bg_alt })
-  M.highlight("NeoTreeNormalNC", { fg = c.fg, bg = c.bg_alt })
-  M.highlight("NeoTreeDirectoryName", { fg = c.func })
-  M.highlight("NeoTreeDirectoryIcon", { fg = c.misc })
-  M.highlight("NeoTreeRootName", { fg = c.keyword, style = "bold" })
-  M.highlight("NeoTreeGitModified", { fg = c.constant })
-  M.highlight("NeoTreeGitAdded", { fg = c.string })
-  M.highlight("NeoTreeGitDeleted", { fg = c.invalid })
-  
-  -- Indent Blankline
-  M.highlight("IndentBlanklineChar", { fg = c.border })
-  M.highlight("IndentBlanklineContextChar", { fg = c.fg_gutter })
-  M.highlight("IblIndent", { fg = c.border })
-  M.highlight("IblScope", { fg = c.fg_gutter })
-  
-  -- Which-key
-  M.highlight("WhichKey", { fg = c.keyword })
-  M.highlight("WhichKeyGroup", { fg = c.func })
-  M.highlight("WhichKeyDesc", { fg = c.fg })
-  M.highlight("WhichKeySeparator", { fg = c.comment })
-  M.highlight("WhichKeyFloat", { bg = c.bg_alt })
-  
-  -- Lualine
-  M.highlight("LualineNormal", { fg = c.fg, bg = c.bg_alt })
-  M.highlight("LualineInsert", { fg = c.bg, bg = c.string })
-  M.highlight("LualineVisual", { fg = c.bg, bg = c.keyword })
-  M.highlight("LualineReplace", { fg = c.bg, bg = c.invalid })
-  M.highlight("LualineCommand", { fg = c.bg, bg = c.misc })
-  
-  -- Alpha (dashboard)
-  M.highlight("AlphaHeader", { fg = c.keyword })
-  M.highlight("AlphaButtons", { fg = c.func })
-  M.highlight("AlphaShortcut", { fg = c.misc })
-  M.highlight("AlphaFooter", { fg = c.comment, style = "italic" })
-  
-  -- Notify
-  M.highlight("NotifyERRORBorder", { fg = c.invalid })
-  M.highlight("NotifyWARNBorder", { fg = c.constant })
-  M.highlight("NotifyINFOBorder", { fg = c.misc })
-  M.highlight("NotifyDEBUGBorder", { fg = c.comment })
-  M.highlight("NotifyTRACEBorder", { fg = c.keyword })
-  M.highlight("NotifyERRORTitle", { fg = c.invalid })
-  M.highlight("NotifyWARNTitle", { fg = c.constant })
-  M.highlight("NotifyINFOTitle", { fg = c.misc })
-  M.highlight("NotifyDEBUGTitle", { fg = c.comment })
-  M.highlight("NotifyTRACETitle", { fg = c.keyword })
 end
 
 return M

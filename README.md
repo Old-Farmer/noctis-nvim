@@ -27,52 +27,55 @@ Noctis features a well-balanced blend of warm and cold colors that are carefully
 
 ```lua
 {
-  "noctis-nvim",
+  "Old-Farmer/noctis-nvim",
   lazy = false,
   priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme noctis]])
-  end,
-}
-```
-
-### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-```lua
-use {
-  "noctis-nvim",
-  config = function()
-    vim.cmd([[colorscheme noctis]])
-  end
 }
 ```
 
 ### Using vim-plug
 
 ```vim
-Plug 'noctis-nvim'
+Plug 'Old-Farmer/noctis-nvim'
+```
+
+### Using vim.pack
+
+```lua
+vim.pack.add("https://github.com/Old-Farmer/noctis-nvim")
 ```
 
 ## 🚀 Usage
 
-Add this to your `init.lua`:
+Configure and load theme:
 
 ```lua
+-- Default setup
+require("noctis").setup({
+  theme = "noctis", -- Options: noctis, lux, hibernus, lilac, minimus, azureus, bordo, obscuro, sereno, uva, viola
+  integrations = {
+    -- All integrations are enabled by default
+    telescope = true,
+    ["fzf-lua"] = true,
+    ["nvim-tree"] = true,
+    ["neo-tree"] = true,
+    gitsigns = true,
+    ["indent-blankline"] = true,
+    ["which-key"] = true,
+    lualine = true,
+    alpha = true,
+    notify = true,
+  }
+})
+
+-- Load the theme
 vim.cmd([[colorscheme noctis]])
 ```
 
-Or in `init.vim`:
+Or simply use colorscheme command without setup:
 
-```vim
-colorscheme noctis
-```
-
-You can use any of the available themes:
 ```lua
-vim.cmd([[colorscheme noctis-lux]])      -- Light theme
-vim.cmd([[colorscheme noctis-azureus]])  -- Dark blue theme
-vim.cmd([[colorscheme noctis-uva]])      -- Dark purple theme
--- etc.
+vim.cmd([[colorscheme noctis]])
 ```
 
 ## 🎯 Features
@@ -81,6 +84,7 @@ vim.cmd([[colorscheme noctis-uva]])      -- Dark purple theme
 - ✅ LSP semantic highlighting
 - ✅ Popular plugin support:
   - Telescope
+  - fzf-lua
   - NvimTree / Neo-tree
   - GitSigns
   - Indent Blankline
