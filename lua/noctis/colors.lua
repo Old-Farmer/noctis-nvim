@@ -130,6 +130,33 @@ M.noctis = {
   selection = "#107684",
 }
 
+M.vscode = {
+  comment = "#5b858b",
+  text = "#b2cacd",
+  keyword = "#df769b",
+  variable = "#e4b781",
+  annotation = "#d67e5c",
+  constant = "#d5971a",
+  tag = "#e66533",
+  string = "#49e9a6",
+  stringInterpolated = "#16b673",
+  number = "#7060eb",
+  func = "#16a3b6",
+  support = "#49d6e9",
+  misc = "#49ace9",
+  invalid = "#e3541c",
+  -- UI colors (VSCode-like background)
+  bg = "#1e1e1e",
+  bg_alt = "#181818",
+  bg_highlight = "#252526",
+  fg = "#b2cacd",
+  fg_dark = "#87a7ab",
+  fg_gutter = "#5b858b",
+  border = "#3c3c3c",
+  cursor = "#85efff",
+  selection = "#264f78",
+}
+
 M.sereno = {
   comment = "#5b858b",
   text = "#b2cacd",

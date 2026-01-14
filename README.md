@@ -13,6 +13,7 @@ Noctis features a well-balanced blend of warm and cold colors that are carefully
 
 ### Dark Themes
 - **noctis** - Classic dark theme
+- **noctis-vscode** - Dark theme with VSCode-like background
 - **noctis-azureus** - Blue-tinted dark theme
 - **noctis-bordo** - Burgundy-tinted dark theme
 - **noctis-obscuro** - Deep dark theme

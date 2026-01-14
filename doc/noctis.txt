@@ -133,6 +133,7 @@ Light Themes~
 
 Dark Themes~
   *noctis*             Classic dark theme (default)
+  *noctis-vscode*      Dark theme with VSCode-like background
   *noctis-azureus*     Blue-tinted dark theme
   *noctis-bordo*       Burgundy-tinted dark theme
   *noctis-obscuro*     Deep dark theme
