@@ -180,6 +180,7 @@ M.sereno = {
   fg_dark = "#87a7ab",
   fg_gutter = "#5b858b",
   border = "#0a1d20",
+  selection = "#107684",
 }
 
 M.obscuro = {
